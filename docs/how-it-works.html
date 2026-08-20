@@ -43,6 +43,33 @@
 <span class="kw">await</span> <span class="fn">submit</span>({ email });</code></pre></div>
           <p class="note"><strong>Note:</strong> FormFacade sends the request from the browser. Google does not expose a readable cross-origin response, so delivery cannot be confirmed from client-side code.</p>
         </section>
+
+        <section class="doc-section">
+          <div class="section-heading"><h2>Give it to your coding agent</h2><div class="section-rule"></div></div>
+          <p class="note" style="margin-top:0">Paste your form URL and field IDs into this prompt, then give it to an agent with access to your codebase.</p>
+          <div class="prompt-card">
+            <textarea class="agent-prompt" id="agent-prompt" readonly>Connect the existing React form in this project to Google Forms with @abdellahi/formfacade.
+
+Google Form URL:
+[PASTE THE PUBLISHED GOOGLE FORM URL]
+
+Field mapping:
+[LOCAL FIELD NAME] -> entry.[GOOGLE FIELD ID]
+
+Requirements:
+- Keep the existing form UI, state, validation, and styles.
+- Install @abdellahi/formfacade if it is missing.
+- Use useGoogleForm in a React component. Use submitGoogleForm only if the form is not React.
+- Prevent the normal browser form submission and send the current values through FormFacade.
+- Disable the submit button while sending and show useful sent and error states.
+- Do not embed or display the Google Forms interface.
+- Treat a resolved submission as sent but unverified. Do not claim that Google stored the response.
+- Run the project's existing checks after the change.
+
+If the entry IDs are missing, inspect the published form for them. If you cannot identify them reliably, stop and ask me for the mapping before editing.</textarea>
+            <div class="prompt-footer"><span>Prompt for Claude Code, Codex, Cursor, or another coding agent</span><button class="button" data-copy-target="#agent-prompt">Copy prompt</button></div>
+          </div>
+        </section>
         <footer class="footer"><span>FormFacade · MIT licensed</span><span><a href="https://github.com/abdellahi-brahim/formfacade">GitHub</a><a href="https://www.npmjs.com/package/@abdellahi/formfacade">npm</a></span></footer>
       </main>
     </div>

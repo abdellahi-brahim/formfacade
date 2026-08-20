@@ -7,6 +7,17 @@ document.querySelectorAll("[data-copy]").forEach((button) => {
   });
 });
 
+document.querySelectorAll("[data-copy-target]").forEach((button) => {
+  button.addEventListener("click", async () => {
+    const target = document.querySelector(button.dataset.copyTarget);
+    if (!target) return;
+    await navigator.clipboard?.writeText(target.value ?? target.textContent);
+    const original = button.textContent;
+    button.textContent = "Copied";
+    window.setTimeout(() => { button.textContent = original; }, 1200);
+  });
+});
+
 document.querySelectorAll(".demo-form").forEach((form) => {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
