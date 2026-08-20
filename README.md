@@ -1,6 +1,7 @@
 # @abdellahi/formfacade
 
 [![CI](https://github.com/abdellahi-brahim/formfacade/actions/workflows/ci.yml/badge.svg)](https://github.com/abdellahi-brahim/formfacade/actions/workflows/ci.yml)
+[![npm version](https://img.shields.io/npm/v/%40abdellahi%2Fformfacade)](https://www.npmjs.com/package/@abdellahi/formfacade)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 A headless bridge between your own React form and Google Forms. The package
