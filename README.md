@@ -1,4 +1,4 @@
-# @formfacade/react
+# @abdellahi/formfacade
 
 [![CI](https://github.com/abdellahi-brahim/formfacade/actions/workflows/ci.yml/badge.svg)](https://github.com/abdellahi-brahim/formfacade/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -10,24 +10,24 @@ complete control of its inputs, validation, components, and styling.
 ## Install
 
 ```bash
-npm install @formfacade/react
+npm install @abdellahi/formfacade
 ```
 
 ## React hook
 
 ```jsx
 import { useState } from "react";
-import { useGoogleForm } from "@formfacade/react";
+import { useGoogleForm } from "@abdellahi/formfacade";
 
 const FORM_URL =
-  "https://docs.google.com/forms/d/e/1FAIpQLSfaJl5x8_ysm6RGrUeJq0EpfA9XnAXVyY7oyrVqKuB6dylx-Q/viewform";
+  "https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform";
 
 export default function WaitlistForm() {
   const [email, setEmail] = useState("");
   const { submit, isSubmitting, isSuccess, error } = useGoogleForm({
     formUrl: FORM_URL,
     fieldMap: {
-      email: "entry.348351691",
+      email: "entry.YOUR_EMAIL_FIELD_ID",
     },
   });
 
@@ -63,11 +63,11 @@ Google Forms. Arrays are submitted as repeated fields for checkbox questions.
 The low-level function can be used without the React hook:
 
 ```js
-import { submitGoogleForm } from "@formfacade/react";
+import { submitGoogleForm } from "@abdellahi/formfacade";
 
 await submitGoogleForm({
   formUrl: FORM_URL,
-  fieldMap: { email: "entry.348351691" },
+  fieldMap: { email: "entry.YOUR_EMAIL_FIELD_ID" },
   values: { email: "person@example.com" },
 });
 ```
@@ -77,7 +77,7 @@ You may omit `fieldMap` when `values` already uses Google entry IDs:
 ```js
 await submitGoogleForm({
   formUrl: FORM_URL,
-  values: { "entry.348351691": "person@example.com" },
+  values: { "entry.YOUR_EMAIL_FIELD_ID": "person@example.com" },
 });
 ```
 

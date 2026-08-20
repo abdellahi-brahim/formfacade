@@ -1,6 +1,6 @@
 {
-  "name": "@formfacade/react",
-  "version": "0.1.0",
+  "name": "@abdellahi/formfacade",
+  "version": "0.1.1",
   "description": "A headless React bridge for submitting custom forms to Google Forms.",
   "author": "Abdellahi Brahim <abdellahi@student.dei.uc.pt>",
   "homepage": "https://github.com/abdellahi-brahim/formfacade#readme",
