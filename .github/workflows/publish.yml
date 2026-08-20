@@ -1,0 +1,46 @@
+name: Publish package
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    if: github.repository == 'abdellahi-brahim/formfacade'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+          registry-url: "https://registry.npmjs.org"
+          package-manager-cache: false
+
+      - name: Verify release tag
+        run: |
+          node -e '
+            const version = require("./package.json").version;
+            const tag = process.env.GITHUB_REF_NAME;
+            if (tag !== "v" + version) {
+              console.error("Tag " + tag + " does not match package version " + version + ".");
+              process.exit(1);
+            }
+          '
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check package
+        run: npm run check
+
+      - name: Publish to npm
+        run: npm publish --access public
