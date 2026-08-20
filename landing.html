@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FormFacade — Build Any Form UI on Google Forms</title>
+    <style>
+      :root {
+        --bg: #050816;
+        --panel: #0d132b;
+        --panel-soft: #151d3e;
+        --text: #f5f7ff;
+        --muted: #b8c0e0;
+        --brand: #7f5af0;
+        --brand-2: #2cb67d;
+        --border: #2a3358;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
+        background: radial-gradient(circle at top right, #1d2452 0%, var(--bg) 38%);
+        color: var(--text);
+        line-height: 1.5;
+      }
+
+      .container {
+        width: min(1080px, 92vw);
+        margin: 0 auto;
+      }
+
+      .hero {
+        padding: 84px 0 60px;
+      }
+
+      .pill {
+        display: inline-block;
+        padding: 6px 12px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      h1 {
+        font-size: clamp(34px, 7vw, 60px);
+        line-height: 1.05;
+        margin: 18px 0 18px;
+        max-width: 760px;
+      }
+
+      .lead {
+        color: var(--muted);
+        max-width: 730px;
+        font-size: 18px;
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 28px;
+      }
+
+      .btn {
+        display: inline-block;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 12px 18px;
+        border-radius: 12px;
+      }
+
+      .btn-primary {
+        background: linear-gradient(140deg, var(--brand), #5d49db);
+        color: white;
+      }
+
+      .btn-secondary {
+        border: 1px solid var(--border);
+        color: var(--text);
+      }
+
+      .cards {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        margin-top: 28px;
+      }
+
+      .card {
+        background: linear-gradient(150deg, var(--panel) 0%, #0f1733 100%);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 18px;
+      }
+
+      .card h3 {
+        margin-top: 4px;
+        margin-bottom: 8px;
+      }
+
+      .card p {
+        margin: 0 0 14px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .mini-ui {
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: var(--panel-soft);
+        padding: 12px;
+      }
+
+      .mini-ui input,
+      .mini-ui select,
+      .mini-ui textarea,
+      .mini-ui button {
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid #3d4774;
+        background: #0b1231;
+        color: #e7ebff;
+        padding: 8px 10px;
+        margin-bottom: 8px;
+        font: inherit;
+      }
+
+      .mini-ui button {
+        margin-bottom: 0;
+        border: none;
+        background: var(--brand-2);
+        color: #022016;
+        font-weight: 700;
+      }
+
+      .google-forms-guide {
+        margin: 62px 0 80px;
+        padding: 24px;
+        border-radius: 18px;
+        border: 1px solid var(--border);
+        background: #0a1026;
+      }
+
+      ol {
+        margin: 0;
+        padding-left: 20px;
+      }
+
+      li + li {
+        margin-top: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <div class="container">
+          <span class="pill">Headless Google Forms bridge</span>
+          <h1>One engine. Many form styles. Powered by FormFacade.</h1>
+          <p class="lead">
+            Build the exact form UI you want—contact forms, Typeform-like surveys, lead funnels, and
+            feedback widgets—while still submitting to Google Forms using
+            <strong>@abdellahi/formfacade</strong>.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://github.com/abdellahi-brahim/formfacade">Get FormFacade</a>
+            <a class="btn btn-secondary" href="#components">See form components</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="components" class="container">
+        <div class="cards">
+          <article class="card">
+            <h3>Contact Form</h3>
+            <p>For support, inquiries, and partnerships.</p>
+            <div class="mini-ui">
+              <input type="text" placeholder="Your name" />
+              <input type="email" placeholder="Work email" />
+              <textarea rows="3" placeholder="How can we help?"></textarea>
+              <button>Send message</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Typeform-Style Survey</h3>
+            <p>Question-by-question onboarding and product discovery.</p>
+            <div class="mini-ui">
+              <input type="text" placeholder="What are you building?" />
+              <select>
+                <option>Team size</option>
+                <option>1-5</option>
+                <option>6-20</option>
+                <option>21+</option>
+              </select>
+              <button>Next question</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Lead Capture</h3>
+            <p>Collect signups for waitlists, demos, and beta programs.</p>
+            <div class="mini-ui">
+              <input type="email" placeholder="Email address" />
+              <select>
+                <option>Role</option>
+                <option>Founder</option>
+                <option>Engineer</option>
+                <option>Marketer</option>
+              </select>
+              <button>Join waitlist</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Feedback Form</h3>
+            <p>Collect ratings, bugs, and feature requests in your own UI.</p>
+            <div class="mini-ui">
+              <select>
+                <option>How was your experience?</option>
+                <option>Great</option>
+                <option>Okay</option>
+                <option>Needs work</option>
+              </select>
+              <textarea rows="3" placeholder="Share your feedback"></textarea>
+              <button>Submit feedback</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="container">
+        <div class="google-forms-guide">
+          <h2>How to create Google Forms for each UI component</h2>
+          <ol>
+            <li>Create one Google Form per use case (contact, survey, lead capture, feedback).</li>
+            <li>Add matching questions/fields in Google Forms for each input used in your UI.</li>
+            <li>Get each Google Form URL and map its <code>entry.*</code> field IDs in FormFacade.</li>
+            <li>Connect each frontend form component to its own <code>formUrl</code> and <code>fieldMap</code>.</li>
+            <li>Reuse the same FormFacade submission flow while keeping completely different UI layouts.</li>
+          </ol>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
