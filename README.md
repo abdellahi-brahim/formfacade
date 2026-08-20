@@ -1,5 +1,8 @@
 # @formfacade/react
 
+[![CI](https://github.com/abdellahi-brahim/formfacade/actions/workflows/ci.yml/badge.svg)](https://github.com/abdellahi-brahim/formfacade/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 A headless bridge between your own React form and Google Forms. The package
 renders nothing, owns no field state, and ships no CSS. Your application keeps
 complete control of its inputs, validation, components, and styling.
@@ -94,3 +97,13 @@ To build the publishable ESM, CommonJS, and TypeScript declaration files:
 npm install
 npm run build
 ```
+
+## Contributing
+
+Bug reports and pull requests are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md)
+before starting a larger change. Report security issues using the process in
+[SECURITY.md](SECURITY.md).
+
+## License
+
+MIT © Abdellahi Brahim. See [LICENSE](LICENSE).

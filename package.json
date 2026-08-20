@@ -2,6 +2,15 @@
   "name": "@formfacade/react",
   "version": "0.1.0",
   "description": "A headless React bridge for submitting custom forms to Google Forms.",
+  "author": "Abdellahi Brahim <abdellahi@student.dei.uc.pt>",
+  "homepage": "https://github.com/abdellahi-brahim/formfacade#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abdellahi-brahim/formfacade.git"
+  },
+  "bugs": {
+    "url": "https://github.com/abdellahi-brahim/formfacade/issues"
+  },
   "type": "module",
   "main": "./dist/formfacade-react.cjs",
   "module": "./dist/formfacade-react.js",
@@ -15,13 +24,16 @@
   },
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "LICENSE"
   ],
   "sideEffects": false,
   "scripts": {
     "dev": "vite",
     "build": "vite build && tsc --emitDeclarationOnly",
-    "preview": "vite preview"
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false --declaration false --declarationMap false",
+    "check": "npm run typecheck && npm run build",
+    "prepack": "npm run check"
   },
   "peerDependencies": {
     "react": ">=18"
@@ -40,5 +52,12 @@
     "forms",
     "formfacade"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
 }
