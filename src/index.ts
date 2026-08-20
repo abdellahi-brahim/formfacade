@@ -2,6 +2,7 @@ export { createGoogleFormAction, submitGoogleForm } from "./submitGoogleForm";
 export { useGoogleForm } from "./useGoogleForm";
 export type {
   GoogleFieldMap,
+  GoogleFieldId,
   GoogleFormSubmissionResult,
   GoogleFormValue,
   GoogleFormValues,

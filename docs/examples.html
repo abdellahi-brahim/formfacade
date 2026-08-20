@@ -4,64 +4,172 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="FormFacade form examples." />
-    <link rel="stylesheet" href="./site.css" />
+    <link rel="stylesheet" href="./site.css?v=4" />
     <title>Examples | FormFacade</title>
   </head>
   <body>
     <div class="shell">
       <aside class="rail">
         <a class="wordmark" href="./index.html">formfacade</a>
-        <nav class="nav-group"><p class="nav-label">Overview</p><a class="nav-link" href="./index.html">Overview</a><a class="nav-link active" href="./examples.html">Examples</a><a class="nav-link" href="./how-it-works.html">How it works</a></nav>
-        <nav class="nav-group resources"><p class="nav-label">Resources</p><a class="nav-link" href="https://github.com/abdellahi-brahim/formfacade" target="_blank" rel="noreferrer">GitHub</a><a class="nav-link" href="https://www.npmjs.com/package/@abdellahi/formfacade" target="_blank" rel="noreferrer">npm</a></nav>
-        <div class="version">v0.1.1 · MIT</div>
+        <nav class="nav-group">
+          <p class="nav-label">Overview</p>
+          <a class="nav-link" href="./index.html">Overview</a
+          ><a class="nav-link active" href="./examples.html">Examples</a
+          ><a class="nav-link" href="./how-it-works.html">How it works</a>
+        </nav>
+        <nav class="nav-group resources">
+          <p class="nav-label">Resources</p>
+          <a
+            class="nav-link"
+            href="https://github.com/abdellahi-brahim/formfacade"
+            target="_blank"
+            rel="noreferrer"
+            >GitHub</a
+          ><a
+            class="nav-link"
+            href="https://www.npmjs.com/package/@abdellahi/formfacade"
+            target="_blank"
+            rel="noreferrer"
+            >npm</a
+          >
+        </nav>
+        <div class="version">v0.2.0 · MIT</div>
       </aside>
 
       <main class="page">
         <section class="page-intro examples-intro">
-          <div class="intro-row"><span>Examples</span><button class="install-copy" data-copy="npm install @abdellahi/formfacade">npm install @abdellahi/formfacade &nbsp;▢</button></div>
-          <h1><span class="highlight">Different UI.</span><br />The same bridge.</h1>
-          <p class="lead">Use a normal form when the job is simple. Use one question at a time when the form is long. FormFacade stays out of the design.</p>
+          <div class="intro-row">
+            <span>Examples</span
+            ><button
+              class="install-copy"
+              data-copy="npm install @abdellahi/formfacade"
+            >
+              npm install @abdellahi/formfacade &nbsp;▢
+            </button>
+          </div>
+          <h1>
+            <span class="highlight">Different UI.</span><br />The same bridge.
+          </h1>
+          <p class="lead">
+            Use a normal form when the job is simple. Use one question at a time
+            when the form is long. FormFacade stays out of the design.
+          </p>
         </section>
 
         <section class="component-grid" aria-label="Form component examples">
           <article class="component">
             <div class="component-head"><span>Contact form</span></div>
             <form class="form demo-form">
-              <h2>Contact the team</h2><p class="form-copy">Tell us what you need and where we can reach you.</p>
-              <div class="field"><label for="contact-name">Name</label><input class="input" id="contact-name" placeholder="Ada Lovelace" required /></div>
-              <div class="field"><label for="contact-email">Email</label><input class="input" id="contact-email" type="email" placeholder="ada@example.com" required /></div>
-              <div class="field"><label for="contact-message">Message</label><textarea class="textarea" id="contact-message" placeholder="How can we help?"></textarea></div>
-              <button class="button dark submit" type="submit">Send message →</button><p class="form-status" aria-live="polite"></p>
+              <h2>Contact the team</h2>
+              <p class="form-copy">
+                Tell us what you need and where we can reach you.
+              </p>
+              <div class="field">
+                <label for="contact-name">Name</label
+                ><input
+                  class="input"
+                  id="contact-name"
+                  placeholder="Ada Lovelace"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label for="contact-email">Email</label
+                ><input
+                  class="input"
+                  id="contact-email"
+                  type="email"
+                  placeholder="ada@example.com"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label for="contact-message">Message</label
+                ><textarea
+                  class="textarea"
+                  id="contact-message"
+                  placeholder="How can we help?"
+                ></textarea>
+              </div>
+              <button class="button dark submit" type="submit">
+                Send message →
+              </button>
+              <p class="form-status" aria-live="polite"></p>
             </form>
           </article>
 
           <article class="component">
             <div class="component-head"><span>Waitlist</span></div>
             <form class="form waitlist-form demo-form">
-              <h2>Join the waitlist</h2><p class="form-copy">Get an email when the product is ready.</p>
-              <div class="field"><label for="waitlist-email">Email address</label><input class="input" id="waitlist-email" type="email" placeholder="you@example.com" required /></div>
-              <button class="button dark submit" type="submit">Join waitlist →</button><p class="form-status" aria-live="polite"></p>
+              <h2>Join the waitlist</h2>
+              <p class="form-copy">Get an email when the product is ready.</p>
+              <div class="field">
+                <label for="waitlist-email">Email address</label
+                ><input
+                  class="input"
+                  id="waitlist-email"
+                  type="email"
+                  placeholder="you@example.com"
+                  required
+                />
+              </div>
+              <button class="button dark submit" type="submit">
+                Join waitlist →
+              </button>
+              <p class="form-status" aria-live="polite"></p>
             </form>
           </article>
 
           <article class="component">
-            <div class="component-head"><span>Product survey</span><b id="survey-count">01 / 05</b></div>
+            <div class="component-head">
+              <span>Product survey</span><b id="survey-count">01 / 05</b>
+            </div>
             <form class="survey" id="survey-demo">
               <div class="survey-progress"><i id="survey-progress"></i></div>
               <div class="survey-stage" id="survey-stage">
-                <h2 class="survey-question" id="survey-question">What are you trying to learn from your users?</h2>
-                <input class="survey-answer" id="survey-answer" placeholder="Type your answer here..." autocomplete="off" required />
-                <div class="survey-actions"><button class="button dark" type="submit" id="survey-next">Continue →</button><span class="survey-hint">or press Enter</span></div>
+                <h2 class="survey-question" id="survey-question">
+                  What are you trying to learn from your users?
+                </h2>
+                <input
+                  class="survey-answer"
+                  id="survey-answer"
+                  placeholder="Type your answer here..."
+                  autocomplete="off"
+                  required
+                />
+                <div class="survey-actions">
+                  <button class="button dark" type="submit" id="survey-next">
+                    Continue →</button
+                  ><span class="survey-hint">or press Enter</span>
+                </div>
               </div>
               <p class="form-status" id="survey-status" aria-live="polite"></p>
             </form>
           </article>
         </section>
 
-        <section class="doc-section"><div class="section-heading"><h2>One package, no component library</h2><div class="section-rule"></div></div><p class="note" style="margin-top:0">These are UI examples, not components exported by FormFacade. Copy the pattern you want, style it your way, and connect it to a Google Form with the hook.</p></section>
-        <footer class="footer"><span>FormFacade · MIT licensed</span><span><a href="https://github.com/abdellahi-brahim/formfacade">GitHub</a><a href="https://www.npmjs.com/package/@abdellahi/formfacade">npm</a></span></footer>
+        <section class="doc-section">
+          <div class="section-heading">
+            <h2>One package, no component library</h2>
+            <div class="section-rule"></div>
+          </div>
+          <p class="note" style="margin-top: 0">
+            These are UI examples, not components exported by FormFacade. Copy
+            the pattern you want, style it your way, and connect it to a Google
+            Form with the hook.
+          </p>
+        </section>
+        <footer class="footer">
+          <span>FormFacade · MIT licensed</span
+          ><span
+            ><a href="https://github.com/abdellahi-brahim/formfacade">GitHub</a
+            ><a href="https://www.npmjs.com/package/@abdellahi/formfacade"
+              >npm</a
+            ></span
+          >
+        </footer>
       </main>
     </div>
-    <script src="./site.js"></script>
+    <script src="./site.js?v=5"></script>
   </body>
 </html>

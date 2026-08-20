@@ -18,6 +18,42 @@ document.querySelectorAll("[data-copy-target]").forEach((button) => {
   });
 });
 
+const promptTextarea = document.querySelector("#agent-prompt");
+const promptFormUrl = document.querySelector("#prompt-form-url");
+const promptComponent = document.querySelector("#prompt-component");
+const promptLocalFields = document.querySelector("#prompt-local-fields");
+if (promptTextarea && promptFormUrl && promptComponent && promptLocalFields) {
+  const buildPrompt = () => {
+    const formUrl = promptFormUrl.value.trim() || "[PASTE THE PUBLISHED GOOGLE FORM URL]";
+    const component = promptComponent.value.trim() || "[FIND THE FORM COMPONENT IN THE CODEBASE]";
+    const localFields = promptLocalFields.value.trim() || "[INSPECT THE COMPONENT]";
+    promptTextarea.value = `Connect the existing React form in this project to Google Forms with @abdellahi/formfacade.
+
+Google Form URL:
+${formUrl}
+
+Form component:
+${component}
+
+Expected local fields:
+${localFields}
+
+First inspect the existing form component. Run this command: npx @abdellahi/formfacade inspect "${formUrl}" --json. Match the returned fields to the local fields by label and type, then show the mapping before editing. If the form is private, inspection fails, or a match is ambiguous, stop and ask me instead of guessing.
+
+Requirements:
+- Keep the existing form UI, state, validation, and styles.
+- Install @abdellahi/formfacade if it is missing.
+- Use useGoogleForm in a React component. Use submitGoogleForm only if the form is not React.
+- Prevent the normal browser form submission and send the current values through FormFacade.
+- Disable the submit button while sending and show useful sent and error states.
+- Do not embed or display the Google Forms interface.
+- Treat a resolved submission as sent but unverified. Do not claim that Google stored the response.
+- Run the project's existing checks after the change.`;
+  };
+  [promptFormUrl, promptComponent, promptLocalFields].forEach((input) => input.addEventListener("input", buildPrompt));
+  buildPrompt();
+}
+
 document.querySelectorAll(".demo-form").forEach((form) => {
   form.addEventListener("submit", (event) => {
     event.preventDefault();

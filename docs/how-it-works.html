@@ -3,35 +3,97 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Connect a custom React form to Google Forms with FormFacade." />
-    <link rel="stylesheet" href="./site.css" />
+    <meta
+      name="description"
+      content="Connect a custom React form to Google Forms with FormFacade."
+    />
+    <link rel="stylesheet" href="./site.css?v=4" />
     <title>How it works | FormFacade</title>
   </head>
   <body>
     <div class="shell">
       <aside class="rail">
         <a class="wordmark" href="./index.html">formfacade</a>
-        <nav class="nav-group"><p class="nav-label">Overview</p><a class="nav-link" href="./index.html">Overview</a><a class="nav-link" href="./examples.html">Examples</a><a class="nav-link active" href="./how-it-works.html">How it works</a></nav>
-        <nav class="nav-group resources"><p class="nav-label">Resources</p><a class="nav-link" href="https://github.com/abdellahi-brahim/formfacade" target="_blank" rel="noreferrer">GitHub</a><a class="nav-link" href="https://www.npmjs.com/package/@abdellahi/formfacade" target="_blank" rel="noreferrer">npm</a></nav>
-        <div class="version">v0.1.1 · MIT</div>
+        <nav class="nav-group">
+          <p class="nav-label">Overview</p>
+          <a class="nav-link" href="./index.html">Overview</a
+          ><a class="nav-link" href="./examples.html">Examples</a
+          ><a class="nav-link active" href="./how-it-works.html"
+            >How it works</a
+          >
+        </nav>
+        <nav class="nav-group resources">
+          <p class="nav-label">Resources</p>
+          <a
+            class="nav-link"
+            href="https://github.com/abdellahi-brahim/formfacade"
+            target="_blank"
+            rel="noreferrer"
+            >GitHub</a
+          ><a
+            class="nav-link"
+            href="https://www.npmjs.com/package/@abdellahi/formfacade"
+            target="_blank"
+            rel="noreferrer"
+            >npm</a
+          >
+        </nav>
+        <div class="version">v0.2.0 · MIT</div>
       </aside>
 
       <main class="page">
         <section class="page-intro">
-          <div class="intro-row"><span>How it works</span><button class="install-copy" data-copy="npm install @abdellahi/formfacade">npm install @abdellahi/formfacade &nbsp;▢</button></div>
-          <h1><span class="highlight">Your fields.</span><br />Google's entry IDs.</h1>
-          <p class="lead">Create a Google Form, find each field's <code>entry.*</code> ID, and map it to the names used by your React form.</p>
+          <div class="intro-row">
+            <span>How it works</span
+            ><button
+              class="install-copy"
+              data-copy="npm install @abdellahi/formfacade"
+            >
+              npm install @abdellahi/formfacade &nbsp;▢
+            </button>
+          </div>
+          <h1>
+            <span class="highlight">Your form.</span><br />Mapped automatically.
+          </h1>
+          <p class="lead">
+            Give FormFacade a published Google Form URL. It finds every field
+            and gives you the mapping for your own UI.
+          </p>
         </section>
 
         <section class="doc-section">
-          <div class="section-heading"><h2>Install</h2><div class="section-rule"></div></div>
-          <div class="code-card"><div class="code-title"><span>Terminal</span><span>npm</span></div><pre><code>npm install @abdellahi/formfacade</code></pre></div>
+          <div class="section-heading">
+            <h2>Install</h2>
+            <div class="section-rule"></div>
+          </div>
+          <div class="code-card">
+            <div class="code-title"><span>Terminal</span><span>npm</span></div>
+            <pre><code>npm install @abdellahi/formfacade</code></pre>
+          </div>
         </section>
 
         <section class="doc-section">
-          <div class="section-heading"><h2>Connect the form</h2><div class="section-rule"></div></div>
-          <ol class="steps"><li>Publish your Google Form.</li><li>Copy its public <code>viewform</code> URL.</li><li>Find the <code>entry.*</code> ID for each question.</li><li>Map those IDs in <code>fieldMap</code>.</li></ol>
-          <div class="code-card"><div class="code-title"><span>WaitlistForm.tsx</span><span>React</span></div><pre><code><span class="kw">import</span> { useGoogleForm } <span class="kw">from</span> <span class="str">"@abdellahi/formfacade"</span>;
+          <div class="section-heading">
+            <h2>Connect the form</h2>
+            <div class="section-rule"></div>
+          </div>
+          <ol class="steps">
+            <li>Publish your Google Form.</li>
+            <li>Copy its public <code>viewform</code> URL.</li>
+            <li>Run the inspector.</li>
+            <li>Paste the generated <code>fieldMap</code> into your component.</li>
+          </ol>
+          <div class="code-card">
+            <div class="code-title">
+              <span>Terminal</span><span>Inspect</span>
+            </div>
+            <pre><code>npx @abdellahi/formfacade inspect <span class="str">"YOUR_GOOGLE_FORM_URL"</span></code></pre>
+          </div>
+          <div class="code-card">
+            <div class="code-title">
+              <span>WaitlistForm.tsx</span><span>React</span>
+            </div>
+            <pre><code><span class="kw">import</span> { useGoogleForm } <span class="kw">from</span> <span class="str">"@abdellahi/formfacade"</span>;
 
 <span class="kw">const</span> { submit, isSubmitting, isSuccess } = <span class="fn">useGoogleForm</span>({
   formUrl: <span class="str">"https://docs.google.com/forms/d/e/.../viewform"</span>,
@@ -40,21 +102,68 @@
   },
 });
 
-<span class="kw">await</span> <span class="fn">submit</span>({ email });</code></pre></div>
-          <p class="note"><strong>Note:</strong> FormFacade sends the request from the browser. Google does not expose a readable cross-origin response, so delivery cannot be confirmed from client-side code.</p>
+<span class="kw">await</span> <span class="fn">submit</span>({ email });</code></pre>
+          </div>
+          <p class="note">
+            <strong>Note:</strong> FormFacade sends the request from the
+            browser. Google does not expose a readable cross-origin response, so
+            delivery cannot be confirmed from client-side code.
+          </p>
         </section>
 
         <section class="doc-section">
-          <div class="section-heading"><h2>Give it to your coding agent</h2><div class="section-rule"></div></div>
-          <p class="note" style="margin-top:0">Paste your form URL and field IDs into this prompt, then give it to an agent with access to your codebase.</p>
+          <div class="section-heading">
+            <h2>Give it to your coding agent</h2>
+            <div class="section-rule"></div>
+          </div>
+          <p class="note" style="margin-top: 0">
+            Give the agent a published Google Form and the component you want
+            connected. It can resolve the entry IDs and build the mapping.
+          </p>
+          <div class="prompt-fields">
+            <label class="prompt-field prompt-field-wide" for="prompt-form-url"
+              >Published Google Form URL<input
+                class="prompt-input"
+                id="prompt-form-url"
+                type="url"
+                placeholder="https://docs.google.com/forms/d/e/.../viewform"
+            /></label>
+            <label class="prompt-field" for="prompt-component"
+              >Form component<input
+                class="prompt-input"
+                id="prompt-component"
+                placeholder="src/components/ContactForm.tsx"
+            /></label>
+            <label class="prompt-field" for="prompt-local-fields"
+              >Local fields<input
+                class="prompt-input"
+                id="prompt-local-fields"
+                placeholder="name, email, message"
+            /></label>
+          </div>
           <div class="prompt-card">
-            <textarea class="agent-prompt" id="agent-prompt" readonly>Connect the existing React form in this project to Google Forms with @abdellahi/formfacade.
+            <div class="prompt-title">
+              <span>agent-prompt.txt</span
+              ><span>Generated from the inputs above</span>
+            </div>
+            <textarea
+              class="agent-prompt"
+              id="agent-prompt"
+              rows="26"
+              spellcheck="false"
+            >
+Connect the existing React form in this project to Google Forms with @abdellahi/formfacade.
 
 Google Form URL:
 [PASTE THE PUBLISHED GOOGLE FORM URL]
 
-Field mapping:
-[LOCAL FIELD NAME] -> entry.[GOOGLE FIELD ID]
+Form component:
+[FIND THE FORM COMPONENT IN THE CODEBASE]
+
+Expected local fields:
+[INSPECT THE COMPONENT]
+
+First inspect the existing form component. Run `npx @abdellahi/formfacade inspect "[PASTE THE PUBLISHED GOOGLE FORM URL]" --json` to read the Google Form fields. Match the returned fields to the local fields by label and type, then show the mapping before editing. If the form is private, inspection fails, or a match is ambiguous, stop and ask me instead of guessing.
 
 Requirements:
 - Keep the existing form UI, state, validation, and styles.
@@ -64,15 +173,29 @@ Requirements:
 - Disable the submit button while sending and show useful sent and error states.
 - Do not embed or display the Google Forms interface.
 - Treat a resolved submission as sent but unverified. Do not claim that Google stored the response.
-- Run the project's existing checks after the change.
-
-If the entry IDs are missing, inspect the published form for them. If you cannot identify them reliably, stop and ask me for the mapping before editing.</textarea>
-            <div class="prompt-footer"><span>Prompt for Claude Code, Codex, Cursor, or another coding agent</span><button class="button" data-copy-target="#agent-prompt">Copy prompt</button></div>
+- Run the project's existing checks after the change.</textarea
+            >
+            <div class="prompt-footer">
+              <span
+                >Prompt for Claude Code, Codex, Cursor, or another coding
+                agent</span
+              ><button class="button" data-copy-target="#agent-prompt">
+                Copy prompt
+              </button>
+            </div>
           </div>
         </section>
-        <footer class="footer"><span>FormFacade · MIT licensed</span><span><a href="https://github.com/abdellahi-brahim/formfacade">GitHub</a><a href="https://www.npmjs.com/package/@abdellahi/formfacade">npm</a></span></footer>
+        <footer class="footer">
+          <span>FormFacade · MIT licensed</span
+          ><span
+            ><a href="https://github.com/abdellahi-brahim/formfacade">GitHub</a
+            ><a href="https://www.npmjs.com/package/@abdellahi/formfacade"
+              >npm</a
+            ></span
+          >
+        </footer>
       </main>
     </div>
-    <script src="./site.js"></script>
+    <script src="./site.js?v=5"></script>
   </body>
 </html>

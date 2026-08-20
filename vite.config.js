@@ -6,11 +6,14 @@ export default defineConfig({
   plugins: [react()],
   build: {
     lib: {
-      entry: resolve(import.meta.dirname, "src/index.ts"),
+      entry: {
+        "formfacade-react": resolve(import.meta.dirname, "src/index.ts"),
+        inspect: resolve(import.meta.dirname, "src/inspectGoogleForm.ts"),
+      },
       name: "FormFacadeReact",
       formats: ["es", "cjs"],
-      fileName: (format) =>
-        format === "es" ? "formfacade-react.js" : "formfacade-react.cjs",
+      fileName: (format, entryName) =>
+        format === "es" ? `${entryName}.js` : `${entryName}.cjs`,
     },
     rollupOptions: {
       external: ["react"],
