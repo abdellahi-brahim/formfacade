@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Connect a custom React form to Google Forms with FormFacade." />
+    <link rel="stylesheet" href="./site.css" />
+    <title>How it works | FormFacade</title>
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="rail">
+        <a class="wordmark" href="./index.html">formfacade</a>
+        <nav class="nav-group"><p class="nav-label">Overview</p><a class="nav-link" href="./index.html">Overview</a><a class="nav-link" href="./examples.html">Examples</a><a class="nav-link active" href="./how-it-works.html">How it works</a></nav>
+        <nav class="nav-group resources"><p class="nav-label">Resources</p><a class="nav-link" href="https://github.com/abdellahi-brahim/formfacade" target="_blank" rel="noreferrer">GitHub</a><a class="nav-link" href="https://www.npmjs.com/package/@abdellahi/formfacade" target="_blank" rel="noreferrer">npm</a></nav>
+        <div class="version">v0.1.1 · MIT</div>
+      </aside>
+
+      <main class="page">
+        <section class="page-intro">
+          <div class="intro-row"><span>How it works</span><button class="install-copy" data-copy="npm install @abdellahi/formfacade">npm install @abdellahi/formfacade &nbsp;▢</button></div>
+          <h1><span class="highlight">Your fields.</span><br />Google's entry IDs.</h1>
+          <p class="lead">Create a Google Form, find each field's <code>entry.*</code> ID, and map it to the names used by your React form.</p>
+        </section>
+
+        <section class="doc-section">
+          <div class="section-heading"><h2>Install</h2><div class="section-rule"></div></div>
+          <div class="code-card"><div class="code-title"><span>Terminal</span><span>npm</span></div><pre><code>npm install @abdellahi/formfacade</code></pre></div>
+        </section>
+
+        <section class="doc-section">
+          <div class="section-heading"><h2>Connect the form</h2><div class="section-rule"></div></div>
+          <ol class="steps"><li>Publish your Google Form.</li><li>Copy its public <code>viewform</code> URL.</li><li>Find the <code>entry.*</code> ID for each question.</li><li>Map those IDs in <code>fieldMap</code>.</li></ol>
+          <div class="code-card"><div class="code-title"><span>WaitlistForm.tsx</span><span>React</span></div><pre><code><span class="kw">import</span> { useGoogleForm } <span class="kw">from</span> <span class="str">"@abdellahi/formfacade"</span>;
+
+<span class="kw">const</span> { submit, isSubmitting, isSuccess } = <span class="fn">useGoogleForm</span>({
+  formUrl: <span class="str">"https://docs.google.com/forms/d/e/.../viewform"</span>,
+  fieldMap: {
+    email: <span class="str">"entry.123456"</span>,
+  },
+});
+
+<span class="kw">await</span> <span class="fn">submit</span>({ email });</code></pre></div>
+          <p class="note"><strong>Note:</strong> FormFacade sends the request from the browser. Google does not expose a readable cross-origin response, so delivery cannot be confirmed from client-side code.</p>
+        </section>
+        <footer class="footer"><span>FormFacade · MIT licensed</span><span><a href="https://github.com/abdellahi-brahim/formfacade">GitHub</a><a href="https://www.npmjs.com/package/@abdellahi/formfacade">npm</a></span></footer>
+      </main>
+    </div>
+    <script src="./site.js"></script>
+  </body>
+</html>
