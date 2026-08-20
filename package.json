@@ -1,7 +1,7 @@
 {
   "name": "@abdellahi/formfacade",
-  "version": "0.1.1",
-  "description": "A headless React bridge for submitting custom forms to Google Forms.",
+  "version": "0.2.0",
+  "description": "A headless React bridge and zero-auth inspector for Google Forms.",
   "author": "Abdellahi Brahim <abdellahi@student.dei.uc.pt>",
   "homepage": "https://github.com/abdellahi-brahim/formfacade#readme",
   "repository": {
@@ -12,6 +12,9 @@
     "url": "https://github.com/abdellahi-brahim/formfacade/issues"
   },
   "type": "module",
+  "bin": {
+    "formfacade": "./bin/formfacade.js"
+  },
   "main": "./dist/formfacade-react.cjs",
   "module": "./dist/formfacade-react.js",
   "types": "./dist/index.d.ts",
@@ -20,9 +23,15 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/formfacade-react.js",
       "require": "./dist/formfacade-react.cjs"
+    },
+    "./inspect": {
+      "types": "./dist/inspectGoogleForm.d.ts",
+      "import": "./dist/inspect.js",
+      "require": "./dist/inspect.cjs"
     }
   },
   "files": [
+    "bin",
     "dist",
     "README.md",
     "LICENSE"
@@ -32,7 +41,8 @@
     "dev": "vite",
     "build": "vite build && tsc --emitDeclarationOnly",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false --declaration false --declarationMap false",
-    "check": "npm run typecheck && npm run build",
+    "test": "npm run build && node --test",
+    "check": "npm run typecheck && npm run build && node --test",
     "prepack": "npm run check"
   },
   "peerDependencies": {
@@ -50,6 +60,7 @@
     "react",
     "google-forms",
     "forms",
+    "cli",
     "formfacade"
   ],
   "license": "MIT",

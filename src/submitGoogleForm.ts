@@ -1,6 +1,7 @@
 export type GoogleFormValue = string | number | boolean | null | undefined;
 export type GoogleFormValues = Record<string, GoogleFormValue | GoogleFormValue[]>;
-export type GoogleFieldMap = Record<string, `entry.${number}` | string>;
+export type GoogleFieldId = `entry.${number}` | "emailAddress";
+export type GoogleFieldMap = Record<string, GoogleFieldId | string>;
 
 export type SubmitGoogleFormOptions = {
   formUrl: string;
@@ -15,7 +16,7 @@ export type GoogleFormSubmissionResult = {
   via: "load" | "timeout";
 };
 
-const ENTRY_NAME = /^entry\.\d+$/;
+const ENTRY_NAME = /^(entry\.\d+|emailAddress)$/;
 
 export function createGoogleFormAction(formUrl: string): string {
   let url: URL;

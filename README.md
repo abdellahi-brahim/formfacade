@@ -14,6 +14,52 @@ complete control of its inputs, validation, components, and styling.
 npm install @abdellahi/formfacade
 ```
 
+## Inspect a Google Form
+
+Pass a published form URL to the CLI. It reads the public form metadata and
+prints the field names and `entry.*` IDs without an API key or Google login.
+
+```bash
+npx @abdellahi/formfacade inspect "https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform"
+```
+
+```text
+Fields (2)
+
+  emailAddress
+    Email Address
+    entry.123456 · short-answer · required
+
+  message
+    Message
+    entry.789012 · paragraph · optional
+
+fieldMap
+const fieldMap = {
+  emailAddress: "entry.123456",
+  message: "entry.789012",
+};
+```
+
+Add `--json` for machine-readable output:
+
+```bash
+npx @abdellahi/formfacade inspect "FORM_URL" --json
+```
+
+The same inspector is available from Node.js:
+
+```js
+import { inspectGoogleForm } from "@abdellahi/formfacade/inspect";
+
+const form = await inspectGoogleForm(FORM_URL);
+console.log(form.fieldMap);
+```
+
+The inspector reads metadata embedded in the public form page. Google does not
+document that page format, so inspection can break if Google changes it. It also
+cannot inspect forms that require sign-in.
+
 ## React hook
 
 ```jsx

@@ -3,8 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Build custom React forms backed by Google Forms." />
-    <link rel="stylesheet" href="./site.css?v=3" />
+    <meta
+      name="description"
+      content="Build custom React forms backed by Google Forms."
+    />
+    <link rel="stylesheet" href="./site.css?v=4" />
     <title>FormFacade | Your form, your UI</title>
   </head>
   <body>
@@ -19,20 +22,43 @@
         </nav>
         <nav class="nav-group resources">
           <p class="nav-label">Resources</p>
-          <a class="nav-link" href="https://github.com/abdellahi-brahim/formfacade" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="nav-link" href="https://www.npmjs.com/package/@abdellahi/formfacade" target="_blank" rel="noreferrer">npm</a>
+          <a
+            class="nav-link"
+            href="https://github.com/abdellahi-brahim/formfacade"
+            target="_blank"
+            rel="noreferrer"
+            >GitHub</a
+          >
+          <a
+            class="nav-link"
+            href="https://www.npmjs.com/package/@abdellahi/formfacade"
+            target="_blank"
+            rel="noreferrer"
+            >npm</a
+          >
         </nav>
-        <div class="version">v0.1.1 · MIT</div>
+        <div class="version">v0.2.0 · MIT</div>
       </aside>
 
       <main class="page">
         <section class="page-intro">
           <div class="intro-row">
             <span>React bridge for Google Forms</span>
-            <button class="install-copy" data-copy="npm install @abdellahi/formfacade">npm install @abdellahi/formfacade &nbsp;▢</button>
+            <button
+              class="install-copy"
+              data-copy="npm install @abdellahi/formfacade"
+            >
+              npm install @abdellahi/formfacade &nbsp;▢
+            </button>
           </div>
-          <h1><span class="highlight">Your form.</span><br />Your product's <span class="underline">UI.</span></h1>
-          <p class="lead">Build any form in React and send its answers to Google Forms. FormFacade renders nothing, owns no state, and ships no CSS.</p>
+          <h1>
+            <span class="highlight">Your form.</span><br />Your product's
+            <span class="underline">UI.</span>
+          </h1>
+          <p class="lead">
+            Build any form in React and send its answers to Google Forms.
+            FormFacade renders nothing, owns no state, and ships no CSS.
+          </p>
           <div class="actions">
             <a class="button dark" href="./examples.html">Browse examples →</a>
             <a class="button" href="./how-it-works.html">How it works</a>
@@ -40,34 +66,92 @@
         </section>
 
         <section class="browser" aria-label="Contact form example">
-          <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-address">your-app.local/contact</span></div>
+          <div class="browser-bar">
+            <span class="browser-dot"></span><span class="browser-dot"></span
+            ><span class="browser-dot"></span
+            ><span class="browser-address">your-app.local/contact</span>
+          </div>
           <div class="browser-body">
             <div class="browser-main">
               <form class="form demo-form">
                 <h2>Send us a message</h2>
-                <p class="form-copy">A normal contact form, styled for your product.</p>
+                <p class="form-copy">
+                  A normal contact form, styled for your product.
+                </p>
                 <div class="field-row">
-                  <div class="field"><label for="name">Name</label><input class="input" id="name" placeholder="Ada Lovelace" required /></div>
-                  <div class="field"><label for="email">Email</label><input class="input" id="email" type="email" placeholder="ada@example.com" required /></div>
+                  <div class="field">
+                    <label for="name">Name</label
+                    ><input
+                      class="input"
+                      id="name"
+                      placeholder="Ada Lovelace"
+                      required
+                    />
+                  </div>
+                  <div class="field">
+                    <label for="email">Email</label
+                    ><input
+                      class="input"
+                      id="email"
+                      type="email"
+                      placeholder="ada@example.com"
+                      required
+                    />
+                  </div>
                 </div>
-                <div class="field"><label for="message">Message</label><textarea class="textarea" id="message" placeholder="How can we help?"></textarea></div>
-                <button class="button dark submit" type="submit">Send message →</button>
+                <div class="field">
+                  <label for="message">Message</label
+                  ><textarea
+                    class="textarea"
+                    id="message"
+                    placeholder="How can we help?"
+                  ></textarea>
+                </div>
+                <button class="button dark submit" type="submit">
+                  Send message →
+                </button>
                 <p class="form-status" aria-live="polite"></p>
               </form>
             </div>
-            <aside class="browser-notes"><span>Same bridge</span><h3>Any form shape.</h3><div class="note-row active">Contact form</div><div class="note-row">Waitlist</div><div class="note-row">Long survey</div></aside>
+            <aside class="browser-notes">
+              <span>Same bridge</span>
+              <h3>Any form shape.</h3>
+              <div class="note-row active">Contact form</div>
+              <div class="note-row">Waitlist</div>
+              <div class="note-row">Long survey</div>
+            </aside>
           </div>
         </section>
 
         <section class="doc-section">
-          <div class="section-heading"><h2>How you use it</h2><div class="section-rule"></div></div>
-          <ol class="steps"><li>Create a Google Form for the answers you need.</li><li>Build the form UI in your React app.</li><li>Map your field names to Google's entry IDs.</li><li>Call <code>submit(values)</code> from your submit handler.</li></ol>
-          <p class="note"><strong>Note:</strong> Short forms should stay short. Use the Typeform pattern only when a longer survey benefits from one question at a time.</p>
+          <div class="section-heading">
+            <h2>How you use it</h2>
+            <div class="section-rule"></div>
+          </div>
+          <ol class="steps">
+            <li>Create a Google Form for the answers you need.</li>
+            <li>Build the form UI in your React app.</li>
+            <li>Run the inspector on its public URL.</li>
+            <li>Use the generated mapping with <code>submit(values)</code>.</li>
+          </ol>
+          <p class="note">
+            <strong>Note:</strong> Short forms should stay short. Use the
+            Typeform pattern only when a longer survey benefits from one
+            question at a time.
+          </p>
         </section>
 
-        <footer class="footer"><span>FormFacade · MIT licensed</span><span><a href="https://github.com/abdellahi-brahim/formfacade">GitHub</a><a href="https://www.npmjs.com/package/@abdellahi/formfacade">npm</a></span></footer>
+        <footer class="footer">
+          <span>FormFacade · MIT licensed</span
+          ><span
+            ><a href="https://github.com/abdellahi-brahim/formfacade">GitHub</a
+            ><a href="https://www.npmjs.com/package/@abdellahi/formfacade"
+              >npm</a
+            ></span
+          >
+        </footer>
       </main>
     </div>
-    <script src="./site.js?v=3"></script>
+    <script src="./site.js?v=5"></script>
   </body>
 </html>
