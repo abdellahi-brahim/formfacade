@@ -15,7 +15,7 @@ Project maintainers may edit or remove comments, commits, code, issues, and
 other contributions that violate this standard. They may temporarily or
 permanently ban a contributor for behavior they consider inappropriate.
 
-Report problems privately to abdellahi@student.dei.uc.pt. Reports will be
+Report problems privately to uchihaabdellahi@gmail.com. Reports will be
 reviewed promptly and kept confidential as far as reasonably possible.
 
 ## Attribution
