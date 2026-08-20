@@ -1,0 +1,44 @@
+{
+  "name": "@formfacade/react",
+  "version": "0.1.0",
+  "description": "A headless React bridge for submitting custom forms to Google Forms.",
+  "type": "module",
+  "main": "./dist/formfacade-react.cjs",
+  "module": "./dist/formfacade-react.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/formfacade-react.js",
+      "require": "./dist/formfacade-react.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && tsc --emitDeclarationOnly",
+    "preview": "vite preview"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.0",
+    "vite": "^7.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "typescript": "^5.9.0",
+    "@types/react": "^19.0.0"
+  },
+  "keywords": [
+    "react",
+    "google-forms",
+    "forms",
+    "formfacade"
+  ],
+  "license": "MIT"
+}
