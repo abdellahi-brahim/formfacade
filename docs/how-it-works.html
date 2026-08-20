@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Connect a custom React form to Google Forms with FormFacade." />
-    <link rel="stylesheet" href="./site.css" />
+    <link rel="stylesheet" href="./site.css?v=3" />
     <title>How it works | FormFacade</title>
   </head>
   <body>
@@ -48,7 +48,8 @@
           <div class="section-heading"><h2>Give it to your coding agent</h2><div class="section-rule"></div></div>
           <p class="note" style="margin-top:0">Paste your form URL and field IDs into this prompt, then give it to an agent with access to your codebase.</p>
           <div class="prompt-card">
-            <textarea class="agent-prompt" id="agent-prompt" readonly>Connect the existing React form in this project to Google Forms with @abdellahi/formfacade.
+            <div class="prompt-title"><span>agent-prompt.txt</span><span>Edit the placeholders, then copy</span></div>
+            <textarea class="agent-prompt" id="agent-prompt" rows="24" spellcheck="false">Connect the existing React form in this project to Google Forms with @abdellahi/formfacade.
 
 Google Form URL:
 [PASTE THE PUBLISHED GOOGLE FORM URL]
@@ -73,6 +74,6 @@ If the entry IDs are missing, inspect the published form for them. If you cannot
         <footer class="footer"><span>FormFacade · MIT licensed</span><span><a href="https://github.com/abdellahi-brahim/formfacade">GitHub</a><a href="https://www.npmjs.com/package/@abdellahi/formfacade">npm</a></span></footer>
       </main>
     </div>
-    <script src="./site.js"></script>
+    <script src="./site.js?v=3"></script>
   </body>
 </html>

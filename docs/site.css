@@ -220,9 +220,11 @@ label { display: block; margin-bottom: 6px; color: #555; font-size: 11px; font-w
 .code-title { display: flex; justify-content: space-between; padding: 10px 13px; border-bottom: 1px solid var(--line); color: #aaa; font: 10px ui-monospace, SFMono-Regular, Menlo, monospace; }
 pre { overflow: auto; margin: 0; padding: 19px; color: #444; font: 12px/1.75 ui-monospace, SFMono-Regular, Menlo, monospace; }
 .kw { color: #8455b2; }.fn { color: #326ea9; }.str { color: #a05543; }.comment { color: #aaa; }
-.prompt-card { overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: #fafafa; }
-.agent-prompt { display: block; width: 100%; min-height: 510px; padding: 18px; border: 0; outline: 0; color: #444; background: transparent; resize: vertical; font: 11px/1.65 ui-monospace, SFMono-Regular, Menlo, monospace; }
-.prompt-footer { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 10px 12px; border-top: 1px solid var(--line); color: #aaa; font-size: 10px; }
+.prompt-card { margin-top: 18px; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: #fafafa; box-shadow: 0 8px 24px #00000008; }
+.prompt-title { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 10px 13px; border-bottom: 1px solid var(--line); color: #aaa; font: 10px ui-monospace, SFMono-Regular, Menlo, monospace; }
+.prompt-card textarea.agent-prompt { display: block; width: 100%; min-height: 480px; margin: 0; padding: 18px; border: 0; border-radius: 0; outline: 0; color: #444; background: #fff; resize: vertical; appearance: none; font: 11px/1.65 ui-monospace, SFMono-Regular, Menlo, monospace; }
+.prompt-card textarea.agent-prompt:focus { box-shadow: inset 0 0 0 2px #cbd6ff; }
+.prompt-card .prompt-footer { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 10px 12px; border-top: 1px solid var(--line); color: #888; font-size: 10px; }
 .footer { display: flex; justify-content: space-between; margin-top: 78px; padding-top: 18px; border-top: 1px solid var(--line); color: #aaa; font-size: 11px; }
 .footer a { margin-left: 15px; }.footer a:hover { color: var(--ink); }
 
@@ -250,7 +252,7 @@ pre { overflow: auto; margin: 0; padding: 19px; color: #444; font: 12px/1.75 ui-
   .browser-notes { display: none; }
   .browser-main { padding: 28px 17px; }
   .field-row { grid-template-columns: 1fr; }
-  .prompt-footer { align-items: stretch; flex-direction: column; }
+  .prompt-title, .prompt-card .prompt-footer { align-items: stretch; flex-direction: column; }
   .footer { align-items: flex-start; flex-direction: column; gap: 10px; }
   .footer a { margin: 0 14px 0 0; }
 }
