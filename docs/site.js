@@ -15,6 +15,24 @@ document.querySelectorAll(".demo-form").forEach((form) => {
   });
 });
 
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const revealTargets = document.querySelectorAll(".browser, .doc-section, .component, .code-card, .footer");
+if (reducedMotion || !("IntersectionObserver" in window)) {
+  revealTargets.forEach((element) => element.classList.add("visible"));
+} else {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.12 });
+  revealTargets.forEach((element) => {
+    element.classList.add("reveal");
+    revealObserver.observe(element);
+  });
+}
+
 const survey = document.querySelector("#survey-demo");
 if (survey) {
   const questions = [
